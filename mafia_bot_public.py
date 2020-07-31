@@ -57,7 +57,7 @@ role_database = {}
 
 role_database['Vanilla'] = Role(name='Vanilla',
     alignment='Innocent',
-    info = ".تو یه شهروند بدبختی! از چشم بصیرتت استفاده کن ومافیا رو پیدا کن",
+    info = ".تو یه شهروند بدبختی! \nاز چشم بصیرتت استفاده کن ومافیا رو پیدا کن",
     has_night_action = False,
     has_day_action = False,
     number_of_targets = 0,

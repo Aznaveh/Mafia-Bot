@@ -1,4 +1,7 @@
 #!/usr/bin/env python3.4
+# vim: set fileencoding=<utf-8> :
+# -*- coding: utf-8 -*-
+
 
 ### The Mafia Bot's token is: [REDACTED]
 ### The TCoD Mafia chat id is: [REDACTED]
@@ -12,7 +15,7 @@ from random import choice
 from random import randint
 import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
-updater = Updater(token='') #TOKEN REDACTED
+updater = Updater(token='907655489:AAEg7XQ58fLThfDjTKIgHg3S__B1s0Y4oCc') #TOKEN REDACTED
 dispatcher = updater.dispatcher
 
 ###FRIEND LIST
@@ -843,7 +846,7 @@ def create(bot, update): #Creates a new game
         print('Group ID: ' + str(group_id)) #Testing
         phase = 'startup'
         ##bot.sendMessage(chat_id=group_id, text="A new game has been created by " + host_name + "!\n"
-        bot.sendMessage(chat_id=group_id, text="!\n" + host_name + "یه بازی جدید درست کرده"
+        bot.sendMessage(chat_id=group_id, text="!\n" + host_name + " یه بازی جدید درست کرده "
         "\nبیا تو حال کن\n"
         "Message /join to the bot to join.\n"
         "Type /playerlist to see who has joined so far.\n\n" +

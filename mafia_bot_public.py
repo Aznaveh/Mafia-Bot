@@ -842,7 +842,9 @@ def create(bot, update): #Creates a new game
         group_id = update.message.chat_id
         print('Group ID: ' + str(group_id)) #Testing
         phase = 'startup'
-        bot.sendMessage(chat_id=group_id, text="A new game has been created by " + host_name + "!\n"
+        ##bot.sendMessage(chat_id=group_id, text="A new game has been created by " + host_name + "!\n"
+        bot.sendMessage(chat_id=group_id, text="!\n" + host_name + "یه بازی جدید درست کرده"
+        "\nبیا تو حال کن\n"
         "Message /join to the bot to join.\n"
         "Type /playerlist to see who has joined so far.\n\n" +
         host_name + ", choose roles for the setup using /add.\nUse /rolelist to show the current setup and /resetroles to clear it.\n"

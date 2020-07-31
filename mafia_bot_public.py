@@ -57,7 +57,7 @@ role_database = {}
 
 role_database['Vanilla'] = Role(name='Vanilla',
     alignment='Innocent',
-    info = "You are a Vanilla Innocent!\nYou have no special powers.\nYou win when all the mafiosi are dead.",
+    info = ".تو یه شهروند بدبختی! از چشم بصیرتت استفاده کن ومافیا رو پیدا کن",
     has_night_action = False,
     has_day_action = False,
     number_of_targets = 0,

@@ -670,6 +670,7 @@ def resolveNightActions(bot,update):
     if len(deaths) == 0:
         string += "No one has died.\n"
     else:
+        #TODO: In our version we do not reveal roles after each night
         for victim in deaths:
             string += victim.name + " has died. They were " + victim.flip() +".\n"
             dead_players.append(victim)

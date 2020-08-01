@@ -27,7 +27,9 @@ friend_dict = {}
 ###ROLES
 
 class Role:
-    def __init__(self,name='Unknown',alignment='Innocent',info='Unknown', has_night_action = False, has_day_action = False, number_of_targets = 0, priority = 0,
+    def __init__(self,name='Unknown',alignment='Innocent',info='Unknown', 
+            has_night_action = False, has_day_action = False, 
+            number_of_targets = 0, priority = 0,
     sends_mafia_kill = False, can_self_target = True,shots = -1):
         self.name = name
         self.alignment = alignment
@@ -43,12 +45,15 @@ class Role:
     def dayPower(self,bot,update,player):
         global group_id
         if self.name == "Horgie":
-            string = "ATTENTION: " + player.name + " is confirmed to be INNOCENT!\n"
-            bonus_string = choice(["I mean, they like to knitting in their spare time and everything!",
-                                    "They didn't mean to bother anyone!",
-                                    "What kind of monster would ever accuse this poor thing of being mafia?",
-                                    "How could they be anything but?",
-                                    "Look at them. They couldn't hurt a fly!"])
+            string = "ATTENTION: " + player.name + \
+                    " is confirmed to be INNOCENT!\n"
+            bonus_string = choice(["I mean, they like to knitting in their"
+                " spare time and everything!",
+                "They didn't mean to bother anyone!",
+                "What kind of monster would ever accuse" 
+                " this poor thing of being mafia?",
+                "How could they be anything but?",
+                "Look at them. They couldn't hurt a fly!"])
             string += bonus_string
             bot.sendMessage(chat_id=group_id, text=string)
 
@@ -66,7 +71,8 @@ role_database['Vanilla'] = Role(name='Vanilla',
 
 role_database['Cop'] = Role(name='Cop',
     alignment='Innocent',
-    info = "You are a Cop!\nDuring the night, you may inspect a player to learn their alignment.\nYou win when all the mafiosi are dead.",
+    info = "You are a Cop!\nDuring the night, you may inspect a player to " 
+    " learn their alignment.\nYou win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
     number_of_targets = 1,
@@ -75,8 +81,11 @@ role_database['Cop'] = Role(name='Cop',
 
 role_database['Rolecop'] = Role(name='Rolecop',
     alignment='Innocent',
-    info = "You are a Rolecop!\nDuring the night, you may inspect a player to learn their role. " \
-    "Note that this will NOT tell you their alignment (so a powerless role would show up as Vanilla regardless of alignment, for example).\n" \
+    info = "You are a Rolecop!\n" 
+    " During the night, you may inspect a player to learn their role. " \
+    "Note that this will NOT tell you their alignment " 
+    " (so a powerless role would show up as Vanilla regardless of alignment, " 
+    "for example).\n" \
     "You win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
@@ -86,8 +95,10 @@ role_database['Rolecop'] = Role(name='Rolecop',
 
 role_database['Oracle'] = Role(name='Oracle',
     alignment='Innocent',
-    info = "You are an Oracle!\nDuring the night, you may target two players. The first player's alignment is revealed to the second player. " \
-    "You cannot target yourself, however.\nYou win when all the mafiosi are dead.",
+    info = "You are an Oracle!\nDuring the night, you may target two players." 
+    " The first player's alignment is revealed to the second player. " \
+    "You cannot target yourself, however.\n"
+    "You win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
     number_of_targets = 2,
@@ -97,8 +108,11 @@ role_database['Oracle'] = Role(name='Oracle',
 
 role_database['Doctor'] = Role(name='Doctor',
     alignment='Innocent',
-    info = "You are a Doctor!\nDuring the night, you may heal another player to prevent them from dying that night. "
-    "However, if the target is healed by several sources at once, they overdose and die!\n"
+    info = "You are a Doctor!\n"
+    "During the night, you may heal another player to prevent "
+    "them from dying that night. "
+    "However, if the target is healed by several sources at once,"
+    " they overdose and die!\n"
     "You win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
@@ -109,7 +123,9 @@ role_database['Doctor'] = Role(name='Doctor',
 
 role_database['Roleblocker'] = Role(name='Roleblocker',
     alignment='Innocent',
-    info = "You are a Roleblocker!\nDuring the night, you may roleblock a player, negating their powers.\nYou win when all the mafiosi are dead.",
+    info = "You are a Roleblocker!\n"
+    "During the night, you may roleblock a player, negating their powers.\n"
+    "You win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
     number_of_targets = 1,
@@ -119,7 +135,8 @@ role_database['Roleblocker'] = Role(name='Roleblocker',
 
 role_database['Vigilante'] = Role(name='Vigilante',
     alignment='Innocent',
-    info = "You are a Vigilante!\nDuring the night, you may kill a player.\nYou win when all the mafiosi are dead.",
+    info = "You are a Vigilante!\nDuring the night, you may kill a player.\n"
+    "You win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
     number_of_targets = 1,
@@ -128,7 +145,8 @@ role_database['Vigilante'] = Role(name='Vigilante',
 
 role_database['Bulletproof'] = Role(name='Bulletproof',
     alignment='Innocent',
-    info = "You are a Bulletproof Innocent!\nYou can survive a kill at night, but only once.\nYou win when all the mafiosi are dead.",
+    info = "You are a Bulletproof Innocent!\nYou can survive a kill at night, "
+    "but only once.\nYou win when all the mafiosi are dead.",
     has_night_action = False,
     has_day_action = False,
     number_of_targets = 0,
@@ -138,7 +156,9 @@ role_database['Bulletproof'] = Role(name='Bulletproof',
 
 role_database['Horgie'] = Role(name='Horgie',
     alignment='Innocent',
-    info = "You are a Horgie!\nDuring the day, you may activate your power to have the bot publicly confirm your innocence.\nYou win when all the mafiosi are dead.",
+    info = "You are a Horgie!\nDuring the day, you may activate your power to "
+    "have the bot publicly confirm your innocence.\n"
+    "You win when all the mafiosi are dead.",
     has_night_action = False,
     has_day_action = True,
     number_of_targets = 0,
@@ -147,7 +167,9 @@ role_database['Horgie'] = Role(name='Horgie',
 
 role_database['Miller'] = Role(name='Miller',
     alignment='Innocent',
-    info = "You are a Miller!\nAlthough you are Innocent, investigative roles will see you as Mafia. How unfair!\nYou win when all the mafiosi are dead.",
+    info = "You are a Miller!\nAlthough you are Innocent, investigative roles"
+    "will see you as Mafia. How unfair!\n"
+    "You win when all the mafiosi are dead.",
     has_night_action = False,
     has_day_action = False,
     number_of_targets = 0,
@@ -156,7 +178,9 @@ role_database['Miller'] = Role(name='Miller',
 
 role_database['Tracker'] = Role(name='Tracker',
     alignment='Innocent',
-    info = "You are a Tracker!\nDuring the night, you may track a player to learn who their targets were that night (if any).\nYou win when all the mafiosi are dead.",
+    info = "You are a Tracker!\nDuring the night, you may track a player to"
+    "learn who their targets were that night (if any).\n"
+    "You win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
     number_of_targets = 1,
@@ -165,7 +189,9 @@ role_database['Tracker'] = Role(name='Tracker',
 
 role_database['Watcher'] = Role(name='Watcher',
     alignment='Innocent',
-    info = "You are a Watcher!\nDuring the night, you may watch a player to learn who targeted them that night (if anyone).\nYou win when all the mafiosi are dead.",
+    info = "You are a Watcher!\nDuring the night, you may watch a player to "
+    "learn who targeted them that night (if anyone).\n"
+    "You win when all the mafiosi are dead.",
     has_night_action = True,
     has_day_action = False,
     number_of_targets = 1,
@@ -176,7 +202,9 @@ role_database['Watcher'] = Role(name='Watcher',
 
 role_database['Alien'] = Role(name='Alien',
     alignment='Alien',
-    info = "You are an Alien!\nYou can survive a kill at night, but only once. If you do, you become activated.\nYou win if you get lynched while you are activated.",
+    info = "You are an Alien!\nYou can survive a kill at night, but only once."
+    " If you do, you become activated.\n"
+    "You win if you get lynched while you are activated.",
     has_night_action = False,
     has_day_action = False,
     number_of_targets = 0,
@@ -185,7 +213,9 @@ role_database['Alien'] = Role(name='Alien',
 
 role_database['Serial Killer'] = Role(name='Serial Killer',
     alignment='Serial Killer',
-    info = "You are a Serial Killer!\nDuring the night, you may kill a player. Also, you can survive a kill at night, but only once.\nYou win when everybody else is dead.",
+    info = "You are a Serial Killer!\n"
+    "During the night, you may kill a player. Also, you can survive a kill at "
+    "night, but only once.\nYou win when everybody else is dead.",
     has_night_action = True,
     has_day_action = False,
     number_of_targets = 1,
@@ -196,8 +226,9 @@ role_database['Serial Killer'] = Role(name='Serial Killer',
 
 role_database['Mafioso'] = Role(name='Vanilla',
     alignment='Mafia',
-    info = "You are a Mafioso!\nYou may communicate privately with other mafiosi. During the night, you (or another mafia member) may kill a player.\n"
-    "You win when all the innocents are dead.",
+    info = "You are a Mafioso!\nYou may communicate privately with other "
+    "mafiosi. During the night, you (or another mafia member)"
+    "may kill a player.\n You win when all the innocents are dead.",
     has_night_action = False,
     has_day_action = False,
     number_of_targets = 0,
@@ -263,7 +294,8 @@ role_database['Mafia Bulletproof'] = Role(name='Bulletproof',
 ###DEFINE PLAYER CLASS
 
 class Player:
-    def __init__(self,name='Unknown',id=0,alignment='Innocent',role=role_database['Vanilla'],chat_id = 0):
+    def __init__(self,name='Unknown',id=0,alignment='Innocent',\
+            role=role_database['Vanilla'],chat_id = 0):
         self.name = name
         self.id = id
         self.alignment = alignment #'Innocent' or 'Mafia'
@@ -333,7 +365,8 @@ def clearGame(): #Cleanup after game is finished
     tiebreaker = Player()
     roles = []
 
-def playerIsValid(bot,update,user_id, #Checks if player is allowed to input a command
+def playerIsValid(bot,update,user_id, 
+        #Checks if player is allowed to input a command
     allow_off = False,
     allow_startup = False,
     allow_day = False,
@@ -348,7 +381,9 @@ def playerIsValid(bot,update,user_id, #Checks if player is allowed to input a co
     global host_id
 
     if not allow_off and phase == 'off':
-        bot.sendMessage(chat_id=update.message.chat_id, text="No game exists yet!",reply_to_message_id=update.message.message_id)
+        bot.sendMessage(chat_id=update.message.chat_id, \
+                text="No game exists yet!",\
+                reply_to_message_id=update.message.message_id)
         return(False)
     elif not allow_startup and phase == 'startup':
         bot.sendMessage(chat_id=update.message.chat_id, text="The game hasn't started yet!",reply_to_message_id=update.message.message_id)

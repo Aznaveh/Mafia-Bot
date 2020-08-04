@@ -562,7 +562,7 @@ def resolveNightActions(bot,update):
                 if not 'blocked' in player.effects:
                     player.targets[0].effects.append('blocked')
 
-        if role.name == 'Bulletproof' or role.name == 'Serial Killer' and day_count == 0:
+        if (role.name == 'Bulletproof' or role.name == 'Serial Killer') and day_count == 0:
             player.effects.append('bulletproof')
 
         if (role.name == 'Miller' or role.name == 'Godfather') and not 'misleading' in player.effects:

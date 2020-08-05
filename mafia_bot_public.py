@@ -1730,7 +1730,7 @@ def advance(bot,update,bypass_host = False):
                     string+="The town has lynched the Bulletproof! Don't freak out!  he has one more chance to live."
              
                 
-                else
+                else:
                    lynchee.status = 'Dead'
                    dead_players.append(lynchee)
                    string += "The town has voted to lynch " + lynchee.name + "!\n"

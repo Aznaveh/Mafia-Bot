@@ -1736,10 +1736,10 @@ def advance(bot,update,bypass_host = False):
                    string += "The town has voted to lynch " + lynchee.name + "!\n"
                    bonus_string = ''
 
-                if lynchee.alignment == 'Alien' and 'activated' in lynchee.effects:
-                    string += "But... " + lynchee.name + " is an Activated Alien! T-that's impossible!"
-                    lynchee.effects.append('winning')
-                    lynchee.status = 'Alive'
+                   if lynchee.alignment == 'Alien' and 'activated' in lynchee.effects:
+                      string += "But... " + lynchee.name + " is an Activated Alien! T-that's impossible!"
+                      lynchee.effects.append('winning')
+                      lynchee.status = 'Alive'
                     
 #TODO: save the bulletproof even if it is during the day
 #              while ('bulletproof' in player.effects) and ('dying' in player.effects):
@@ -1751,7 +1751,7 @@ def advance(bot,update,bypass_host = False):
 #                bot.sendMessage(chat_id=player.chat_id, text=bonus_string)
 
               
-                else:
+                  else:
                     string += lynchee.name + " has died. They were " + lynchee.flip() + ".\n"
                     sendDeathMessage(bot,lynchee)
                     if lynchee.flip() == 'Mafia':

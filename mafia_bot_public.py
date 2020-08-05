@@ -1734,6 +1734,17 @@ def advance(bot,update,bypass_host = False):
                     string += "But... " + lynchee.name + " is an Activated Alien! T-that's impossible!"
                     lynchee.effects.append('winning')
                     lynchee.status = 'Alive'
+                    
+#TODO: save the bulletproof even if it is during the day
+#              while ('bulletproof' in player.effects) and ('dying' in player.effects):
+#                player.effects.remove('bulletproof')
+#                player.effects.remove('dying')
+#                bonus_string = choice(["Oh my. Someone attacked you, and you lost your bulletproofing.",
+#                "Looks like you've made enemies. Someone's attack destroyed your bulletproofing!",
+#                "Someone tried to kill you! But you held up your sign saying 'Bulletproof' and scared them off. Next time you won't be so lucky."])
+#                bot.sendMessage(chat_id=player.chat_id, text=bonus_string)
+
+              
                 else:
                     string += lynchee.name + " has died. They were " + lynchee.flip() + ".\n"
                     sendDeathMessage(bot,lynchee)

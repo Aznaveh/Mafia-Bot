@@ -1725,10 +1725,16 @@ def advance(bot,update,bypass_host = False):
                     string += "The vote is tied! That means Emeric the Mafia Bot gets to pick...!\n"
 
 
-                lynchee.status = 'Dead'
-                dead_players.append(lynchee)
-                string += "The town has voted to lynch " + lynchee.name + "!\n"
-                bonus_string = ''
+                if 'bulletproof' in lynchee.effects:
+                    lynchee.effects.remove('bulletproof')
+                    string+="The town has lynched the Bulletproof! Don't freak out!  he has one more chance to live."
+             
+                
+                else
+                   lynchee.status = 'Dead'
+                   dead_players.append(lynchee)
+                   string += "The town has voted to lynch " + lynchee.name + "!\n"
+                   bonus_string = ''
 
                 if lynchee.alignment == 'Alien' and 'activated' in lynchee.effects:
                     string += "But... " + lynchee.name + " is an Activated Alien! T-that's impossible!"

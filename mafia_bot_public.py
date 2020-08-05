@@ -1751,7 +1751,7 @@ def advance(bot,update,bypass_host = False):
 #                bot.sendMessage(chat_id=player.chat_id, text=bonus_string)
 
               
-                  else:
+                   else:
                     string += lynchee.name + " has died. They were " + lynchee.flip() + ".\n"
                     sendDeathMessage(bot,lynchee)
                     if lynchee.flip() == 'Mafia':
